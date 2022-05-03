@@ -25,14 +25,15 @@ public class App {
 		User user1 = new User();
 		user1.setUserName("Rafa");
 		user1.setBirthDay(calendar.getTime());
-
-		User user2 = new User();
-		user2.setUserName("Juan");
-		calendar.set(1996, 5, 20);
-		user2.setBirthDay(calendar.getTime());
-
 		em.persist(user1);
-		em.persist(user2);
+		
+		Phone phone = new Phone("123456789");
+		phone.setUser(user1);
+		
+		em.persist(phone);
+		
+		em.flush();
+		
 
 		em.getTransaction().commit();
 

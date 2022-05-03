@@ -13,13 +13,11 @@ import javax.persistence.TemporalType;
 
 
 @Entity
-@Table(name="AnotherUser")
 public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
-	
-	@Column(name="nombre")
+		
 	private String userName;
 	
 	private String userMesagge;
